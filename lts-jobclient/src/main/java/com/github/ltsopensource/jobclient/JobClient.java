@@ -217,7 +217,7 @@ public class JobClient<T extends JobClientNode, Context extends AppContext> exte
         final CountDownLatch latch = new CountDownLatch(1);
         remotingClient.invokeAsync(requestCommand, new AsyncCallback() {
             @Override
-            public void operationComplete(ResponseFuture responseFuture) {
+            public void  operationComplete(ResponseFuture responseFuture) {
                 try {
                     submitCallback.call(responseFuture.getResponseCommand());
                 } finally {
